@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title><%= title %></title>
+  <link data-n-head="ssr" rel="icon" type="image/x-icon" href="/favicon.ico">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
+</head>
+
+<body>
+  <%- include('partials/navbar') %>
+  <div class="mt-16">
+    <iframe class="aspect-auto w-full h-screen" src="http://localhost:5601/app/dashboards#/view/9362a8d0-d554-4795-8766-a17cc288d1e0?embed=true&_g=(refreshInterval%3A(pause%3A!f%2Cvalue%3A3000)%2Ctime%3A(from%3Anow%2Fd%2Cto%3Anow%2Fd))&show-query-input=true&show-time-filter=true"></iframe>
+  </div>
+  <%- include('partials/footer') %>
+  <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+</body>
+
+</html>

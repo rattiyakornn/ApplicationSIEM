@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title><%= title %></title>
+  <link data-n-head="ssr" rel="icon" type="image/x-icon" href="/favicon.ico">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
+</head>
+
+<body>
+  <%- include('partials/navbar') %>
+  <div class="mt-5">
+    <iframe class="aspect-auto w-full h-screen" src="http://localhost:5601/app/discover#/?_g=(filters:!(),refreshInterval:(pause:!f,value:3000),time:(from:now%2Fd,to:now%2Fd))&_a=(columns:!(),dataSource:(dataViewId:'1d73fae1-fe60-4063-930e-8e8a6b9cca3f',type:dataView),filters:!(),interval:auto,query:(language:kuery,query:''),sort:!(!('@timestamp',desc)))"></iframe>
+  </div>
+
+  <%- include('partials/footer') %>
+  <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+</body>
+
+</html>
