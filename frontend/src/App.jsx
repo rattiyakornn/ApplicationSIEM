@@ -1,28 +1,28 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Login from "./login"
+import Signup from './signup';
+import Forgotpassword from './forgotpassword';
+import Index from "./index";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>เงี่ยนปิ๊</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-      </div>
-    </>
+    <Router>
+      <Routes>
+        {/* หน้า Login */}
+        <Route path="/" element={<Login />} />
+
+        {/* หน้า Index */}
+        <Route path="/index" element={<Index />} />
+
+        {/* หน้า Forgot password */}
+        <Route path="/forgotpassword" element={<Forgotpassword />} />
+
+        {/* หน้า Sign up */}
+        <Route path="/signup" element={<Signup />} />
+      </Routes>
+    </Router>
   )
 }
 
