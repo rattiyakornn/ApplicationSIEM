@@ -1,9 +1,14 @@
 import { useState } from "react";
 
+import Overview from './overview';
+import WebTraffic from './webtraffic';
+import Incidents from './incidents';
+import LogExplorer from './logexplorer';
+
 export default function Index() {
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [monitoringOpen, setMonitoringOpen] = useState(false);
-  const [activeMenu, setActiveMenu] = useState("dashboard");
+  const [activeMenu, setActiveMenu] = useState("overview");
 
   const menuItems = [
     {
@@ -18,13 +23,17 @@ export default function Index() {
     { id: "logexplorer", label: "LogExplorer" },
   ];
 
-  // ฟังก์ชันจัดการคลิกเมนูหลัก
-  const handleMenuClick = (id, hasSubmenu) => {
-    if (hasSubmenu) {
-      setMonitoringOpen(!monitoringOpen); 
-    } else {
-      setActiveMenu(id);
-      setMonitoringOpen(false); 
+  const renderContent = () => {
+    switch (activeMenu) {
+      case 'overview':
+        return <Overview />;
+      case 'webtraffic':  
+        return <WebTraffic />;
+      case 'incidents':
+        return <Incidents />;
+      case 'logexplorer':
+        return <LogExplorer />;
+      
     }
   };
 
@@ -190,10 +199,7 @@ export default function Index() {
 
         {/* Content Area */}
         <main className="flex-1 p-6">
-          <p className="text-gray-300">
-            นี่คือหน้าหลักสำหรับเมนู: <strong>{activeMenu}</strong>
-          </p>
-          {/* ใส่เนื้อหาเพิ่มเติมตรงนี้ */}
+          {renderContent()}
         </main>
       </div>
     </div>

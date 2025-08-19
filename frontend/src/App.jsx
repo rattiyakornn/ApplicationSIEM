@@ -21,6 +21,10 @@ function App() {
 
         {/* หน้า Sign up */}
         <Route path="/signup" element={<Signup />} />
+
+        {/* หน้า Sign up */}
+        <Route path="/signup" element={<Signup />} />
+
       </Routes>
     </Router>
   )
