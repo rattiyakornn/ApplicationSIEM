@@ -285,7 +285,7 @@ export default function Overview() {
             <div className="grid grid-cols-4 gap-4 px-4 py-2 text-sm font-medium text-gray-600">
               <div>ชื่อประเทศ</div>
               <div className="text-center">Requests</div>
-              <div className="text-center"></div>
+              <div className="text-center">่่jjj</div>
               <div className="text-center">Bandwidth</div>
             </div>
           </div>
